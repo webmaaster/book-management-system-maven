@@ -101,7 +101,7 @@ public class BookMain {
 				bookPojo = bookService.getABook(bookId);
 				if(bookPojo != null) {
 					System.out.println("**********************************");
-					System.out.println("Bool Details to removed...");
+					System.out.println("Book Details to removed...");
 					System.out.println("**********************************");
 					System.out.println("Book ID: " + bookPojo.getBookId());
 					System.out.println("Book Title: " + bookPojo.getBookTitle());
