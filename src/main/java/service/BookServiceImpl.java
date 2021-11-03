@@ -41,4 +41,10 @@ public class BookServiceImpl implements BookService{
 		return this.bookDao.getABook(bookId);
 	}
 
+	@Override
+	public void exitApplication() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

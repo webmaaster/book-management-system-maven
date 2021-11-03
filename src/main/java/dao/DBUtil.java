@@ -30,7 +30,6 @@ public class DBUtil {
 			try {
 				conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "root");
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -41,7 +40,6 @@ public class DBUtil {
 		try {
 			conn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

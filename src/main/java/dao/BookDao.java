@@ -10,4 +10,6 @@ public interface BookDao {
 	boolean deleteBook(int bookId);
 	List<BookPojo> getAllBooks();
 	BookPojo getABook(int bookId);
+	void exitApplication();
+	
 }

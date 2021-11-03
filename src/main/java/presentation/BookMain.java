@@ -38,11 +38,11 @@ public class BookMain {
 				System.out.println("Enter book title:");
 				bookPojo.setBookTitle(scan.nextLine());
 				
-				System.out.println("Enter book genre:");
-				bookPojo.setBookGenre(scan.nextLine());
-				
 				System.out.println("Enter book author:");
 				bookPojo.setBookAuthor(scan.nextLine());
+				
+				System.out.println("Enter book genre:");
+				bookPojo.setBookGenre(scan.nextLine());
 				
 				System.out.println("Enter book cost:");
 				bookPojo.setBookCost(Integer.parseInt(scan.nextLine()));
@@ -72,21 +72,12 @@ public class BookMain {
 					bookPojo = new BookPojo();
 					bookPojo.setBookId(bookId);
 					
-					System.out.println("Enter updated book title:");
-					bookPojo.setBookTitle(scan.nextLine());
-					
-					System.out.println("Enter updated book genre:");
-					bookPojo.setBookGenre(scan.nextLine());
-					
-					System.out.println("Enter updated book author:");
-					bookPojo.setBookAuthor(scan.nextLine());
-					
 					System.out.println("Enter updated book cost:");
 					bookPojo.setBookCost(Integer.parseInt(scan.nextLine()));
 					
 					returnedBookPojo = bookService.updateBook(bookPojo);
 					System.out.println("**********************************");
-					System.out.println("Book updated successfully!!");
+					System.out.println("Book cost updated successfully!!");
 					
 				} else {
 					System.out.println("**********************************");
@@ -126,7 +117,7 @@ public class BookMain {
 			case 4:
 				List<BookPojo> allBooks = bookService.getAllBooks();
 				
-				System.out.println("ID\tTITLE\t\tGENRE\t\tAUTHOR\t\tCOST");
+				System.out.println("ID\tTITLE\t\tAUTHOR\t\tGENRE\t\tCOST");
 //				Iterator<BookPojo> itr = allBooks.iterator();
 //				while(itr.hasNext()) {
 //					BookPojo myBookPojo = itr.next();
@@ -136,13 +127,14 @@ public class BookMain {
 //				System.out.println();
 				
 				allBooks.forEach((myBookPojo) -> {
-					System.out.print(myBookPojo.getBookId() + "\t" + myBookPojo.getBookTitle() + "\t\t" + myBookPojo.getBookGenre() + "\t\t" + myBookPojo.getBookAuthor() + "\t\t" + myBookPojo.getBookCost());
+					System.out.print(myBookPojo.getBookId() + "\t" + myBookPojo.getBookTitle() + "\t\t" + myBookPojo.getBookAuthor() + "\t\t" + myBookPojo.getBookGenre() + "\t\t" + myBookPojo.getBookCost());
 					System.out.println();
 				});
 				System.out.println();
 				break;
 				
 			case 5:
+				bookService.exitApplication();
 				System.out.println("Thankyou for using the app!!");
 				System.out.println("Exiting the application....");
 				System.out.println("**********************************");
@@ -161,6 +153,7 @@ public class BookMain {
 			if("y".equalsIgnoreCase(ch)) {
 				continue;
 			} else {
+				bookService.exitApplication();
 				System.out.println("**********************************");
 				System.out.println("Thankyou for using the app!!");
 				System.out.println("Exiting the application....");

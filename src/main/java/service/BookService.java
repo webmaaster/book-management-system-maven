@@ -10,4 +10,5 @@ public interface BookService {
 	boolean deleteBook(int bookId);
 	List<BookPojo> getAllBooks();
 	BookPojo getABook(int bookId);
+	void exitApplication();
 }

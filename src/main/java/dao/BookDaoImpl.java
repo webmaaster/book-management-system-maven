@@ -61,6 +61,12 @@ public class BookDaoImpl implements BookDao{
 		return null;
 	}
 
+	@Override
+	public void exitApplication() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }
